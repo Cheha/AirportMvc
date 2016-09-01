@@ -1,0 +1,19 @@
+﻿@model List<AirportTestMvc.Models.Entities.Flight>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>@Html.ActionLink("Create new", "Create", "Flight")</div>
+<div>
+    @{
+        foreach(var flight in Model) {
+            <div class="editor-label">@flight.Number</div>
+            <div class="editor-label">@flight.CityFrom</div>        
+            <div class="editor-label">@flight.CityTo</div>
+            <div class="editor-label">@Html.ActionLink("Update", "Update", new { id = @flight.Id })  @Html.ActionLink("Delete", "Delete", new { id = @flight.Id })</div>
+            <p></p>
+        }  
+     }
+</div>
